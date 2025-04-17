@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tutorial de Uso - Mattermost | Santa Amélia</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <img src="imagens/logo-com-bg-removebg-preview.png" alt="Logo Santa Amélia" />
+    <h1>Guia de Uso - Mattermost</h1>
+    <p>Conecte-se ao servidor e comece a colaborar com sua equipe</p>
+  </header>
+
+  <main>
+
+    <section>
+      <h2>Passo 1 – Acesse o Mattermost</h2>
+      <p>Abra o navegador e acesse o link abaixo para se conectar ao servidor:</p>
+      <a href="http://192.168.254.83:8065/login" class="button" target="_blank">Abrir Mattermost Web</a>
+      <p>Utilize seu login e senha fornecidos previamente.</p>
+      <img src="imagens/tela-login.png" alt="Tela de login do Mattermost" />
+    </section>
+
+    <section>
+      <h2>Passo 2 – Instale o aplicativo (opcional)</h2>
+      <p>Para uma melhor experiência, instale o aplicativo no seu dispositivo:</p>
+
+      <h3>💻 Desktop:</h3>
+      <ul>
+        <li><a href="https://mattermost.com/download/#mattermost-desktop" target="_blank">Baixar para Windows, Mac e Linux</a></li>
+        <li><a href="https://releases.mattermost.com/desktop/5.11.2/mattermost-desktop-5.11.2-win-x64.msi?src=dl" target="_blank">Link direto para Windows 10 e +</a></li>
+      </ul>
+
+      <h3>📱 Celular:</h3>
+      <ul>
+        <li><a href="https://play.google.com/store/apps/details?id=com.mattermost.rn" target="_blank">Download Android (Google Play)</a></li>
+        <li><a href="https://apps.apple.com/app/mattermost/id1257222717" target="_blank">Download iOS (App Store)</a></li>
+      </ul>
+      <img src="imagens/app-mobile.png" alt="Aplicativo Mattermost no celular" />
+    </section>
+
+    <section>
+      <h2>Passo 3 – Conectando ao servidor</h2>
+      <p>Ao abrir o aplicativo, insira o endereço do servidor:</p>
+      <p>
+        <code id="server-url" >http://192.168.254.83:8065</code>
+        <button onclick="copiarEndereco()" style="padding: 4px 8px; margin-left: 6px; border: none; background-color: var(--button-color); color: white; border-radius: 4px; cursor: pointer;">
+            📋 Copiar
+          </button>
+          <span id="copiado-msg" style="display: none; color: green; font-size: 0.9em; margin-left: 5px;">Copiado!</span>
+      </p>
+      <p>Depois, faça login com suas credenciais. OBS.: No momento só está acessível na rede da Matriz e Labsul</p>
+      <img src="imagens/config-dominio.PNG" alt="Inserindo o endereço do servidor" />
+    </section>
+
+    <section>
+      <h2>Passo 4 – Usando o Mattermost</h2>
+      <ul>
+        <li><strong>Entrar em canais:</strong> Acesse os canais da sua equipe para conversar por texto.</li>
+        <li><strong>Mencionar alguém:</strong> Use <code>@nome</code> para mencionar um colega.</li>
+        <li><strong>Enviar arquivos:</strong> Clique no clipe 📎 ou arraste arquivos para o chat.</li>
+        <li><strong>Responder em threads:</strong> Clique em "Responder" para manter a conversa organizada.</li>
+      </ul>
+      <img src="imagens/interface-matte.PNG" alt="Interface do Mattermost em uso" />
+    </section>
+
+    <section>
+      <h2>Suporte</h2>
+      <p>Se tiver problemas ou dúvidas, entre em contato com o setor de TI.</p>
+      <p>Você também pode usar o canal <strong>#ajuda</strong> dentro do Mattermost.</p>
+    </section>
+
+  </main>
+
+  <footer>
+    &copy; 2025 Digital Solutions. Todos os direitos reservados.
+  </footer>
+  <script>
+    function copiarEndereco() {
+      const texto = document.getElementById("server-url").innerText;
+      navigator.clipboard.writeText(texto).then(() => {
+        const msg = document.getElementById("copiado-msg");
+        msg.style.display = "inline";
+        setTimeout(() => {
+          msg.style.display = "none";
+        }, 2000);
+      });
+    }
+  </script>
+</body>
+</html>
